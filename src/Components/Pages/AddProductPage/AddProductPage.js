@@ -47,7 +47,7 @@ export default function AddProductPage(){
             }}>
                 <div className="label-input-wrapper">
                     <label htmlFor = "name">Nome</label>
-                    <input type = "text" name = "name"  placeholder = "Digite o nome do produto"required onChange = {
+                    <input id="productName" type = "text" name = "name"  placeholder = "Digite o nome do produto" required onChange = {
                         (event) => {
                             let {value} = event.target;
                             setNome(value);
@@ -56,7 +56,7 @@ export default function AddProductPage(){
                 </div>
                 <div className="label-input-wrapper">
                     <label htmlFor = "cost">Custo</label>
-                    <input type = "text" name = "cost"  placeholder = "Digite o custo da produção do produto"required onChange = {
+                    <input id="productcost" type = "text" name = "cost"  placeholder = "Digite o custo da produção do produto" required onChange = {
                         (event) => {
                             let {value} = event.target;
                             value = parseFloat(value);
@@ -66,7 +66,7 @@ export default function AddProductPage(){
                 </div>
                 <div className="label-input-wrapper">
                     <label id = "preco-venda"htmlFor = "price">Preço de venda</label>
-                    <input type = "text" name = "price"  placeholder = "Digite por quanto você venderá o produto"required onChange = {
+                    <input id="productprice" type = "text" name = "price"  placeholder = "Digite por quanto você venderá o produto" required onChange = {
                         (event) => {
                             let {value} = event.target;
                             value = parseFloat(value);

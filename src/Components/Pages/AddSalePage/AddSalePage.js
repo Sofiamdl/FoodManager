@@ -41,9 +41,9 @@ export default function AddSalePage(props){
         <div className = "sale-wrapper">
 
             <header>
-                <button onClick = {handleTapComeBack} >Voltar</button>
+                <button id="sairbutton" onClick = {handleTapComeBack} >Voltar</button>
                 <h2>Adicione nova venda</h2>
-                <button onClick = {handleSubmitPressed}>Adicione uma venda</button> 
+                <button id="adicionarvenda" onClick = {handleSubmitPressed}>Adicione uma venda</button> 
             </header> 
 
             <form>
@@ -51,6 +51,7 @@ export default function AddSalePage(props){
                     <label  id = "label-quantidade" for = "quantity">Quantidade</label>
                     <input 
                         type="text"
+                        id="quantitysale"
                         name = "quantity"
                         placeholder = "Digite a quantidade"
                         onChange={handleChange}

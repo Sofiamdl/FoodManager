@@ -2,10 +2,8 @@
 
 context('Actions', () => {
   beforeEach(() => {
-    cy.visit('https://food-manager.netlify.app/')
+    cy.visit('http://localhost:3000/')
   })
-
-  // https://on.cypress.io/interacting-with-elements
 
 
   it('Teste para criar conta', () => {
@@ -49,17 +47,17 @@ context('Actions', () => {
 
     cy.get('#register-button').click()
 
-    cy.get('#label-input-wrapper1')
+    cy.get('#productName')
       .type('feijoada')
 
-    cy.get('#label-input-wrapper2')
+    cy.get('#productcost')
       .type('10')
 
-    cy.get('#label-input-wrapper3')
+    cy.get('#productprice')
       .type('15')
   });
 
-  it('Teste entrar e cadastrar produto', () => {
+  it('Teste entrar e cadastrar venda', () => {
     cy.get('#formBasicUsername')
       .type('fakename').should('have.value', 'fakename')
     
@@ -70,10 +68,28 @@ context('Actions', () => {
 
     cy.get('.box-footer-content .box-product-wrapper #register-button').click()
 
-    cy.get('.label-input-wrapper input')
+    cy.get('#quantitysale')
       .type('2')
 
-    cy.get('header button').click()
+    cy.get('#adicionarvenda').click()
+
+  });
+
+  it('Teste entrar no modal de cadastrar venda, digitar algo e sair', () => {
+    cy.get('#formBasicUsername')
+      .type('fakename').should('have.value', 'fakename')
+    
+    cy.get('#formBasicPassword')
+      .type('fakepassword')
+
+    cy.get('.btn-primary').click()
+
+    cy.get('.box-footer-content .box-product-wrapper #register-button').click()
+
+    cy.get('#quantitysale')
+      .type('2')
+
+    cy.get('#sairbutton').click()
 
   });
 
